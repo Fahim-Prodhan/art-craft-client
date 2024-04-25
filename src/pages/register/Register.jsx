@@ -6,7 +6,8 @@ import { Helmet } from "react-helmet";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
+
 
 
 const Register = () => {

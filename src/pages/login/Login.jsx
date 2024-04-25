@@ -8,8 +8,9 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import auth from "../../../firebase/firebase.config";
-import { AuthContext } from "../../../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
+import auth from "../../firebase/firebase.config";
+
 
 
 const Login = () => {

@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           style={({ isActive }) => ({
-            color: isActive ? "#2861fd" : "#ffff",
+            color: isActive ? "#FF6D60" : "#fff",
             background: isActive ? "transparent" : "transparent",
           })}
         >
@@ -27,7 +27,7 @@ const Navbar = () => {
         <NavLink
           to="/AllArtCraftItems"
           style={({ isActive }) => ({
-            color: isActive ? "#2861fd" : "#ffff",
+            color: isActive ? "#FF6D60" : "#fff",
             background: isActive ? "transparent" : "transparent",
           })}
         >
@@ -42,7 +42,7 @@ const Navbar = () => {
             background: isActive ? "transparent" : "transparent",
           })}
         >
-           Add Craft item
+          Add Craft item
         </NavLink>
       </li>
       <li>
@@ -53,10 +53,9 @@ const Navbar = () => {
             background: isActive ? "transparent" : "transparent",
           })}
         >
-           My Art & Craft List
+          My Art & Craft List
         </NavLink>
       </li>
-      
     </>
   );
 
@@ -77,13 +76,13 @@ const Navbar = () => {
             <div className="md:flex gap-4 hidden">
               <button
                 type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
               >
                 Login
               </button>
               <button
                 type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
               >
                 Register
               </button>
@@ -118,7 +117,7 @@ const Navbar = () => {
             id="navbar-cta"
           >
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                {links}
+              {links}
             </ul>
           </div>
         </div>
@@ -130,23 +129,21 @@ const Navbar = () => {
           <button onClick={handleHamburger} className="text-2xl">
             <IoMdClose />
           </button>
-          <ul className="space-y-3 text-xl mt-6 ">
-            {links}
-          </ul>
+          <ul className="space-y-3 text-xl mt-6 ">{links}</ul>
           <div className="flex gap-4 mt-6">
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Register
-              </button>
-            </div>
+            <button
+              type="button"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Register
+            </button>
+          </div>
         </div>
       </nav>
     </div>
