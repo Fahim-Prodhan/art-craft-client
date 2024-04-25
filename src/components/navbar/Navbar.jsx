@@ -38,7 +38,7 @@ const Navbar = () => {
         <NavLink
           to="/AddCraft"
           style={({ isActive }) => ({
-            color: isActive ? "#2861fd" : "#ffff",
+            color: isActive ? "#FF6D60" : "#ffff",
             background: isActive ? "transparent" : "transparent",
           })}
         >
@@ -49,7 +49,7 @@ const Navbar = () => {
         <NavLink
           to="/myArtList"
           style={({ isActive }) => ({
-            color: isActive ? "#2861fd" : "#ffff",
+            color: isActive ? "#FF6D60" : "#ffff",
             background: isActive ? "transparent" : "transparent",
           })}
         >
@@ -74,12 +74,14 @@ const Navbar = () => {
           </Link>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="md:flex gap-4 hidden">
-              <button
-                type="button"
-                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
-              >
-                Login
-              </button>
+              <Link to='/login'>
+                <button
+                  type="button"
+                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
+                >
+                  Login
+                </button>
+              </Link>
               <button
                 type="button"
                 className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "

@@ -70,12 +70,12 @@ const Register = () => {
     return (
         <div>
             <Helmet>
-                <title>EstateHive | Register</title>
+                <title>CraftoPia | Register</title>
             </Helmet>
-            <div className="text-center my-3">
-                <h1 className="text-[40px] text-[#00b5a5]">Register</h1>
+            <div className="text-center">
+                <h1 className="text-[40px] mt-6 text-[#FF6D60]">Register</h1>
             </div>
-            <div className="">
+            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-6">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body">
@@ -110,7 +110,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button type="submit" className="btn bg-[#00b5a5] text-white">Create an account</button>
+                                <button type="submit" className="btn bg-[#FF6D60] text-white">Create an account</button>
                             </div>
                         </form>
                     </div>

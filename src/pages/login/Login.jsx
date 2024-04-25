@@ -117,12 +117,12 @@ const Login = () => {
     return (
         <div>
             <Helmet>
-                <title>EstateHive | Login</title>
+                <title>CraftoPia | Login</title>
             </Helmet>
-            <div className="text-center py-2">
-                <h1 className="text-[40px] text-[#00b5a5]">Please Login</h1>
+            <div className="text-center pt-6">
+                <h1 className="text-[40px] text-[#FF6D60]">Please Login</h1>
             </div>
-            <div className="">
+            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-6">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSingInUser} className="card-body">
@@ -144,7 +144,7 @@ const Login = () => {
                                     <p className="pt-2 text-sm">Don't Have any account? <span className="text-blue-400"><Link to='/register'>Register</Link></span></p>
                                 </label>
                                 <div className="form-control mt-6">
-                                    <button type="submit" className="btn bg-[#00b5a5] text-white">Login</button>
+                                    <button type="submit" className="btn bg-[#FF6D60] text-white">Login</button>
                                 </div>
                                 <div className="divider"> sign in with</div>
                                 <div className="flex justify-center gap-6">
