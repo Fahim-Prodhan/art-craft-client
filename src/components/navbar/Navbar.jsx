@@ -1,14 +1,94 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import logo from "../../assets/images/logo.png";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { signOut } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
 
+ 
+  const { user, setLoading } = useContext(AuthContext);
+
+  const handleLogout = () => {
+      setLoading(true)
+      signOut(auth).then(() => {
+          toast.success("Logout Successful",{
+              position: "top-right",
+              duration:2000,
+              style:{width:'200px', height:'70px'},
+              
+          })
+         
+      }).catch((error) => {
+          console.log(error);
+          toast.error("Logout Successful",{
+              position: "top-right",
+              duration:2000,
+              style:{width:'200px', height:'70px'},
+          });
+      });
+  }
+
   const handleHamburger = () => {
     setHamburger(!hamburger);
   };
+
+  const HamburgerLinks = (
+    <>
+      <li>
+        <NavLink
+          onClick={hamburger}
+          to="/"
+          style={({ isActive }) => ({
+            color: isActive ? "#FF6D60" : "#fff",
+            background: isActive ? "transparent" : "transparent",
+          })}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          onClick={hamburger}
+          to="/AllArtCraftItems"
+          style={({ isActive }) => ({
+            color: isActive ? "#FF6D60" : "#fff",
+            background: isActive ? "transparent" : "transparent",
+          })}
+        >
+          All Art & craft Items
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          onClick={hamburger}
+          to="/AddCraft"
+          style={({ isActive }) => ({
+            color: isActive ? "#FF6D60" : "#ffff",
+            background: isActive ? "transparent" : "transparent",
+          })}
+        >
+          Add Craft item
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          onClick={hamburger}
+          to="/myArtList"
+          style={({ isActive }) => ({
+            color: isActive ? "#FF6D60" : "#ffff",
+            background: isActive ? "transparent" : "transparent",
+          })}
+        >
+          My Art & Craft List
+        </NavLink>
+      </li>
+    </>
+  );
 
   const links = (
     <>
@@ -61,23 +141,27 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className=" bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src={logo} className="h-8" alt="Flowbite Logo" />
+            <img src={logo} className="h-8" alt="" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               CraftoPia
             </span>
           </Link>
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div className="md:flex gap-4 hidden">
-              <Link to='/login'>
+          <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
+            <div
+              className={`md:block space-x-3 gap-4 hidden ${
+                user && "md:hidden"
+              }`}
+            >
+              <Link to="/login">
                 <button
                   type="button"
-                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
+                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
                 >
                   Login
                 </button>
@@ -89,11 +173,32 @@ const Navbar = () => {
                 Register
               </button>
             </div>
+
+            <div
+              className={`md:flex items-center space-x-3 gap-4 hidden ${
+                !user && "md:hidden"
+              }`}
+            >
+              <div className="avatar">
+                <div className="w-12 rounded-full">
+                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+              <Link onClick={handleLogout} to="/login">
+                <button
+                  type="button"
+                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+                >
+                  Logout
+                </button>
+              </Link>
+            </div>
+
             <button
               onClick={handleHamburger}
               data-collapse-toggle="navbar-cta"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-cta"
               aria-expanded="false"
             >
@@ -115,36 +220,51 @@ const Navbar = () => {
             </button>
           </div>
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
             id="navbar-cta"
           >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
               {links}
             </ul>
           </div>
         </div>
         <div
-          className={`md:hidden fixed p-6 z-[99] duration-500 w-[80%] h-screen top-0 text-white bg-gray-900 ${
-            hamburger ? "right-0" : "right-[-400px]"
+          className={`lg:hidden fixed p-6 z-[99] duration-500 md:w-[50%] w-[80%] h-screen top-0 text-white bg-gray-900 ${
+            hamburger ? "right-0" : "right-[-350px] md:right-[-700px]"
           }`}
         >
           <button onClick={handleHamburger} className="text-2xl">
             <IoMdClose />
           </button>
-          <ul className="space-y-3 text-xl mt-6 ">{links}</ul>
-          <div className="flex gap-4 mt-6">
-            <button
-              type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Login
-            </button>
-            <button
-              type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Register
-            </button>
+          <ul className="font-semibold text-xl mt-6 ">{HamburgerLinks}</ul>
+
+          <div className={`md:hidden flex gap-4 mt-6 ${user && "hidden"}`}>
+            <Link onClick={handleHamburger} to="/login">
+              <button
+                type="button"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] px-2 py-1 rounded-lg"
+              >
+                Login
+              </button>
+            </Link>
+            <Link onClick={handleHamburger} to="/register">
+              <button
+                type="button"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] px-2 py-1 rounded-lg"
+              >
+                Register
+              </button>
+            </Link>
+          </div>
+          <div className={`md:hidden flex gap-4 mt-6 ${!user && "hidden"}`}>
+            <Link onClick={()=>{handleLogout();handleHamburger()}} to="/login">
+              <button
+                type="button"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] px-2 py-1 rounded-lg"
+              >
+                Logout
+              </button>
+            </Link>
           </div>
         </div>
       </nav>

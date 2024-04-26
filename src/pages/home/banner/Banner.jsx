@@ -36,8 +36,9 @@ function Banner() {
           </SwiperSlide>
         </Swiper>
           <div className="absolute text-center top-16 md:top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] ">
-            <h1 className="font-rancho font-bold text-white text-center md:text-[48px]">One Of the Finest Collection is Here</h1>
-            <button className="md:text-3xl bg-[#92929297] text-[#FF6D60] border-2 px-4 py-1 md:px-6 md:py-2 mt-6 duration-500 hover:text-[#F7D060] hover:border-blue-500">Learn More</button>
+            <h1 className="font-rancho font-bold text-white text-center lg:text-[48px]">One Of the Finest Collection is Here</h1>
+            <p className="text-white">Explore the World Best Collection</p>
+            <button className="md:text-3xl bg-[#92929297] text-[#F7D060] border-2 px-4 py-1 md:px-6 md:py-2 md:mt-6 duration-500 hover:text-[#FF6D60] hover:border-blue-500">Learn More</button>
           </div>
       </div>
     </div>
