@@ -11,6 +11,7 @@ const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
 
   const { user, setLoading } = useContext(AuthContext);
+  // console.log(user);
 
   const handleLogout = () => {
     setLoading(true);
@@ -152,10 +153,10 @@ const Navbar = () => {
             </span>
           </Link>
           <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-            <div
-              className={`md:block space-x-3 gap-4 hidden ${
-                user && "md:hidden"
-              }`}
+            
+            {
+              !user && <div
+              className={`md:block space-x-3 gap-4 hidden`}
             >
               <Link to="/login">
                 <button
@@ -172,30 +173,33 @@ const Navbar = () => {
                 Register
               </button>
             </div>
+            }
 
-            <div
-              className={`flex items-center space-x-3 gap-4  ${
-                !user && "md:hidden"
-              }`}
-            >
-              <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
+          {
+            user &&   <div
+            className={`flex items-center space-x-3 gap-4`}
+          >
+            {
+              user && <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
                 <div className="w-12 rounded-full">
                   <img src={user?.photoURL} />
                 </div>
               </div>
-              <Link
-                className="hidden md:flex"
-                onClick={handleLogout}
-                to="/login"
+            }
+            <Link
+              className="hidden md:flex"
+              onClick={handleLogout}
+              to="/login"
+            >
+              <button
+                type="button"
+                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
               >
-                <button
-                  type="button"
-                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
-                >
-                  Logout
-                </button>
-              </Link>
-            </div>
+                Logout
+              </button>
+            </Link>
+          </div>
+          }
 
             <button
               onClick={handleHamburger}
@@ -232,9 +236,8 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`lg:hidden fixed p-6 z-[99] duration-500 md:w-[50%] w-[80%] h-screen top-0 text-white bg-gray-900 ${
-            hamburger ? "right-0" : "right-[-350px] md:right-[-700px]"
-          }`}
+          className={`lg:hidden fixed p-6 z-[99] duration-500 md:w-[50%] w-[80%] h-screen top-0 text-white bg-gray-900 ${hamburger ? "right-0" : "right-[-350px] md:right-[-700px]"
+            }`}
         >
           <button onClick={handleHamburger} className="text-2xl">
             <IoMdClose />

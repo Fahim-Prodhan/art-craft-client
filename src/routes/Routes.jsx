@@ -6,6 +6,8 @@ import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import AddCraft from "../pages/addCraft/AddCraft";
+import PrivateRoute from "./PrivateRoute";
+import baseUrl from "../services/helper";
 
 
 
@@ -17,7 +19,8 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch(`${baseUrl}/crafts`)
         },
         {
             path:'/login',
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/addCraft',
-            element:<AddCraft></AddCraft>
+            element:<PrivateRoute><AddCraft></AddCraft></PrivateRoute>
         },
       ]
     },

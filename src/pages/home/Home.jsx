@@ -1,13 +1,32 @@
-import React from 'react';
+
 import Banner from './banner/Banner';
+import { useLoaderData } from 'react-router-dom';
+import HomeCraft from '../../components/homeCraft/HomeCraft';
+
 
 const Home = () => {
+    const loadedCrafts = useLoaderData();
+
+
+
     return (
         <div>
-           <Banner></Banner>
-           <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-12"> 
-      
-           </div>
+            <Banner></Banner>
+            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-12">
+
+                {/* Craft Card Section */}
+                <div className='mt-[100px]'>
+                    <h1 className='text-center text-4xl font-bold'>Craft Items</h1>
+                    <p className='pt-3 pb-12 text-center'>Explore the world famous arts. Find your Choice</p>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch'>
+                        {
+                            loadedCrafts.slice(0, 6).map((craft, index) => <HomeCraft key={index} craft={craft}></HomeCraft>)
+                        }
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     );
 };

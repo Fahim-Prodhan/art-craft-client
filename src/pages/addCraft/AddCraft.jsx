@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import baseUrl from "../../services/helper";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddCraft = () => {
+
+  const { user } = useContext(AuthContext);
+
   const handleAddCraft = (e) => {
     e.preventDefault();
     e.preventDefault();
@@ -36,7 +40,7 @@ const AddCraft = () => {
     fetch(`${baseUrl}/addCrafts`, {
       method: "POST",
       headers: {
-        'content-type':'application/json'
+        'content-type': 'application/json'
       },
       body: JSON.stringify(formValues),
     })
@@ -189,6 +193,7 @@ const AddCraft = () => {
                 </span>
               </label>
               <input
+                value={user?.email}
                 type="text"
                 name="user_email"
                 placeholder="Enter User Email"
@@ -203,6 +208,7 @@ const AddCraft = () => {
                 </span>
               </label>
               <input
+                value={user?.displayName}
                 type="text"
                 name="user_name"
                 placeholder="Enter User Name"
