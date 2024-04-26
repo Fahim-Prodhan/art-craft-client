@@ -10,28 +10,27 @@ import toast from "react-hot-toast";
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
 
- 
   const { user, setLoading } = useContext(AuthContext);
 
   const handleLogout = () => {
-      setLoading(true)
-      signOut(auth).then(() => {
-          toast.success("Logout Successful",{
-              position: "top-right",
-              duration:2000,
-              style:{width:'200px', height:'70px'},
-              
-          })
-         
-      }).catch((error) => {
-          console.log(error);
-          toast.error("Logout Successful",{
-              position: "top-right",
-              duration:2000,
-              style:{width:'200px', height:'70px'},
-          });
+    setLoading(true);
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout Successful", {
+          position: "top-right",
+          duration: 2000,
+          style: { width: "200px", height: "70px" },
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Logout Successful", {
+          position: "top-right",
+          duration: 2000,
+          style: { width: "200px", height: "70px" },
+        });
       });
-  }
+  };
 
   const handleHamburger = () => {
     setHamburger(!hamburger);
@@ -175,16 +174,20 @@ const Navbar = () => {
             </div>
 
             <div
-              className={`md:flex items-center space-x-3 gap-4 hidden ${
+              className={`flex items-center space-x-3 gap-4  ${
                 !user && "md:hidden"
               }`}
             >
-              <div className="avatar">
+              <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
                 <div className="w-12 rounded-full">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src={user?.photoURL} />
                 </div>
               </div>
-              <Link onClick={handleLogout} to="/login">
+              <Link
+                className="hidden md:flex"
+                onClick={handleLogout}
+                to="/login"
+              >
                 <button
                   type="button"
                   className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
@@ -257,7 +260,13 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={`md:hidden flex gap-4 mt-6 ${!user && "hidden"}`}>
-            <Link onClick={()=>{handleLogout();handleHamburger()}} to="/login">
+            <Link
+              onClick={() => {
+                handleLogout();
+                handleHamburger();
+              }}
+              to="/login"
+            >
               <button
                 type="button"
                 className="text-white bg-[#FF6D60] hover:bg-[#ff988f] px-2 py-1 rounded-lg"
