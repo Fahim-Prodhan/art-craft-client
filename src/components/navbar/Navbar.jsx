@@ -54,7 +54,7 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={hamburger}
-          to="/AllArtCraftItems"
+          to="/allCrafts"
           style={({ isActive }) => ({
             color: isActive ? "#FF6D60" : "#fff",
             background: isActive ? "transparent" : "transparent",
@@ -78,7 +78,7 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={hamburger}
-          to="/myArtList"
+          to={`/myCrafts/${user?.email}`}
           style={({ isActive }) => ({
             color: isActive ? "#FF6D60" : "#ffff",
             background: isActive ? "transparent" : "transparent",
@@ -105,7 +105,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/AllArtCraftItems"
+          to="/allCrafts"
           style={({ isActive }) => ({
             color: isActive ? "#FF6D60" : "#fff",
             background: isActive ? "transparent" : "transparent",
@@ -127,7 +127,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/myArtList"
+          to={`/myCrafts/${user?.email}`}
           style={({ isActive }) => ({
             color: isActive ? "#FF6D60" : "#ffff",
             background: isActive ? "transparent" : "transparent",

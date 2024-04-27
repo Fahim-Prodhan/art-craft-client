@@ -38,7 +38,7 @@ function Banner() {
           <div className="absolute text-center top-16 md:top-[40%] lg:top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] ">
             <h1 className="font-rancho font-bold text-white text-center text-[13px] md:text-[24px] lg:text-[48px]">One Of the Finest Collection is Here</h1>
             <p className="text-white text-xs md:text-xl">Explore the World Best Collection</p>
-            <button className="lg:text-3xl mt-1 md:text-xl bg-[#92929297] text-[#F7D060] border-2 px-4 py-1 md:px-6 md:py-2 md:mt-6 duration-500 hover:text-[#FF6D60] hover:border-blue-500">Learn More</button>
+            <button className="rounded-md lg:text-3xl mt-1 md:text-xl bg-[#92929297] text-[#F7D060] border-2 px-4 py-1 md:px-6 md:py-2 md:mt-6 duration-500 hover:text-[#FF6D60] hover:border-blue-500">Learn More</button>
           </div>
       </div>
     </div>

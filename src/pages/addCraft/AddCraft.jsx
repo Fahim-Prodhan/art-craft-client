@@ -7,6 +7,8 @@ const AddCraft = () => {
 
   const { user } = useContext(AuthContext);
 
+  const subcategories = ['Landscape Painting', "Portrait Drawing", "Watercolour Painting", "Oil Painting", "Charcoal Sketching", "Cartoon Drawing"]
+
   const handleAddCraft = (e) => {
     e.preventDefault();
     e.preventDefault();
@@ -67,7 +69,7 @@ const AddCraft = () => {
 
   return (
     <div className="max-w-sm px-6 md:max-w-3xl lg:px-8 lg:max-w-6xl mx-auto mt-6 lg:mt-12">
-      <div className="bg-[#f7d16015] lg:px-28 md:py-16 text-center">
+      <div className="bg-[#eee] lg:px-28 md:py-16 text-center">
         <h1 className="font-semibold text-[#FF6D60] text-5xl">
           Add Craft Items
         </h1>
@@ -108,21 +110,30 @@ const AddCraft = () => {
                   Subcategory Name
                 </span>
               </label>
-              <input
-                type="text"
-                name="subcategory_name"
-                placeholder="Enter Subcategory Name"
-                className="input "
-                required
-              />
+              <select name="subcategory_name" className="select select-bordered w-full">
+                {subcategories.map((subcategory, index) => (
+                  <option key={index}>{subcategory}</option>
+                ))}
+              </select>
             </div>
             <div className="form-control">
+              <label className="label">
+                <span className=" text-[14px] font-semibold label-text">
+                  Subcategory Name
+                </span>
+              </label>
+              <select name="customization" className="select select-bordered w-full">
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+            <div className="form-control col-span-2">
               <label className="label">
                 <span className=" text-[14px] font-semibold label-text">
                   Short Description
                 </span>
               </label>
-              <input
+              <textarea
                 type="text"
                 name="short_description"
                 placeholder="Enter Short Description"
@@ -217,36 +228,7 @@ const AddCraft = () => {
               />
             </div>
 
-            <div>
-              <label className="grid gap-3 label">
-                <span className=" text-[14px] font-semibold label-text">
-                  Customization
-                </span>
-                <div>
-                  <label className="flex gap-3">
-                    <input
-                      value={"Yes"}
-                      type="radio"
-                      name="customization"
-                      className="radio"
-                      checked
-                    />
-                    <span>Yes</span>
-                  </label>
-                </div>
-                <div>
-                  <label className="flex gap-3">
-                    <input
-                      value={"No"}
-                      type="radio"
-                      name="customization"
-                      className="radio"
-                    />
-                    <span>No</span>
-                  </label>
-                </div>
-              </label>
-            </div>
+            
 
             <div className="form-control mt-6 col-span-2">
               <button type="submit" className="btn bg-[#FF6D60] text-white">

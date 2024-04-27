@@ -8,6 +8,11 @@ import Register from "../pages/register/Register";
 import AddCraft from "../pages/addCraft/AddCraft";
 import PrivateRoute from "./PrivateRoute";
 import baseUrl from "../services/helper";
+import MyCrafts from "../pages/myCrafts/MyCrafts";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import AllCrafts from "../pages/allCrafts/AllCrafts";
+
 
 
 
@@ -33,6 +38,16 @@ const router = createBrowserRouter([
         {
             path:'/addCraft',
             element:<PrivateRoute><AddCraft></AddCraft></PrivateRoute>
+        },
+        {
+            path:'/myCrafts/:email',
+            element:<PrivateRoute><MyCrafts></MyCrafts></PrivateRoute>,
+            loader:({params})=>fetch(`${baseUrl}/crafts/${params.email}`)
+        },
+        {
+            path:'/allCrafts',
+            element:<AllCrafts></AllCrafts>,
+            loader:()=>fetch(`${baseUrl}/crafts`)
         },
       ]
     },
