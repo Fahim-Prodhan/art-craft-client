@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeCraft = ({ craft }) => {
 
-    const { image,
+    const {
+        _id, 
+        image,
         item_name,
         subcategory_name,
         short_description,
@@ -33,7 +36,7 @@ const HomeCraft = ({ craft }) => {
                     
                     <div className='flex justify-between items-center'>
                         <p className='text-xl font-semibold'>Price: <span className='text-[#FF6D60]'>{price}</span></p>
-                        <button className='btn bg-[#FF6D60] text-white'>View Details</button>
+                        <Link to={`/details/${_id}`}> <button className='btn bg-[#FF6D60] text-white'>View Details</button> </Link>
                     </div>
                     
                 </div>
