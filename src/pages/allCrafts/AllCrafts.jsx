@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllCrafts = () => {
     const loadedAllCrafts = useLoaderData()
@@ -31,7 +31,9 @@ const AllCrafts = () => {
                                     <td>{craft.stock_status}</td>
                                     <td>{craft.rating}</td>
                                     <td>
-                                        <button className="bg-[#FF6D60] text-white rounded-lg px-3 py-2">View Details</button>
+                                        <Link to={`/details/${craft._id}`}>
+                                            <button className="bg-[#FF6D60] text-white rounded-lg px-3 py-2">View Details</button>
+                                        </Link>
                                     </td>
                                 </tr>
                             )
