@@ -2,10 +2,14 @@
 import Banner from './banner/Banner';
 import { useLoaderData } from 'react-router-dom';
 import HomeCraft from '../../components/homeCraft/HomeCraft';
+import HomeSubcategories from '../../components/homeSubcategories/HomeSubcategories';
 
 
 const Home = () => {
     const loadedCrafts = useLoaderData();
+
+
+    // console.log(loadedSubcategory);
 
 
 
@@ -23,6 +27,12 @@ const Home = () => {
                             loadedCrafts.slice(0, 6).map((craft, index) => <HomeCraft key={index} craft={craft}></HomeCraft>)
                         }
                     </div>
+                </div>
+
+                <div className='mt-[100px]' >
+                    <h1 className='text-center text-4xl font-bold'>Art & Craft Categories</h1>
+                    <p className='pt-3 pb-12 text-center'>Find Your Desire Design and arts filtering from subcategory</p>
+                    <HomeSubcategories></HomeSubcategories>
                 </div>
 
 

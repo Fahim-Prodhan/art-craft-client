@@ -153,53 +153,55 @@ const Navbar = () => {
             </span>
           </Link>
           <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-            
+
             {
               !user && <div
-              className={`md:block space-x-3 gap-4 hidden`}
-            >
-              <Link to="/login">
-                <button
-                  type="button"
-                  className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
-                >
-                  Login
-                </button>
-              </Link>
-              <button
-                type="button"
-                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
+                className={`md:block space-x-3 gap-4 hidden`}
               >
-                Register
-              </button>
-            </div>
-            }
-
-          {
-            user &&   <div
-            className={`flex items-center space-x-3 gap-4`}
-          >
-            {
-              user && <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
-                <div className="w-12 rounded-full">
-                  <img src={user?.photoURL} />
-                </div>
+                <Link to="/login">
+                  <button
+                    type="button"
+                    className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+                  >
+                    Login
+                  </button>
+                </Link>
+                <Link to={'/register'}>
+                  <button
+                    type="button"
+                    className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center "
+                  >
+                    Register
+                  </button>
+                </Link>
               </div>
             }
-            <Link
-              className="hidden md:flex"
-              onClick={handleLogout}
-              to="/login"
-            >
-              <button
-                type="button"
-                className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+
+            {
+              user && <div
+                className={`flex items-center space-x-3 gap-4`}
               >
-                Logout
-              </button>
-            </Link>
-          </div>
-          }
+                {
+                  user && <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
+                    <div className="w-12 rounded-full">
+                      <img src={user?.photoURL} />
+                    </div>
+                  </div>
+                }
+                <Link
+                  className="hidden md:flex"
+                  onClick={handleLogout}
+                  to="/login"
+                >
+                  <button
+                    type="button"
+                    className="text-white bg-[#FF6D60] hover:bg-[#ff988f] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+                  >
+                    Logout
+                  </button>
+                </Link>
+              </div>
+            }
 
             <button
               onClick={handleHamburger}

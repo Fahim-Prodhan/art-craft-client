@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch(`${baseUrl}/crafts`)
+            loader:()=>fetch(`${baseUrl}/crafts`),
         },
         {
             path:'/login',
