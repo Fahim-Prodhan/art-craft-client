@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyCraft = ({ craft }) => {
+const MyCraft = ({ craft,handelDelete }) => {
 
 
     return (
@@ -20,7 +20,7 @@ const MyCraft = ({ craft }) => {
                         </div>
                     </div>
                     <div className='self-center place-self-end flex md:flex-col gap-4'>
-                        <button className="bg-[#ff3b3b] text-white rounded-lg px-3 py-2">Delete</button>
+                        <button onClick={()=>handelDelete(craft._id)} className="bg-[#ff3b3b] text-white rounded-lg px-3 py-2">Delete</button>
                         <button className="bg-[#10439F] text-white rounded-lg px-3 py-2">Update</button>
                     </div>
                 </div>
