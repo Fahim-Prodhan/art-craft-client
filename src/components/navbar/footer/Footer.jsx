@@ -9,7 +9,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 const Footer = () => {
   return (
     <div>
-      <footer className="ml footer p-10 bg-base-300 text-base-content">
+      <footer className=" lg:px-20 footer p-10 bg-neutral text-neutral-content">
         <nav>
           <h6 className="footer-title">Category</h6>
           <a className="link link-hover">Landscape Painting</a>
@@ -20,7 +20,7 @@ const Footer = () => {
         <nav>
           <h6 className="footer-title">Contact Us</h6>
           <a className="link link-hover flex gap-2"><span><FaPhone /></span> 1-800-700-6200</a>
-          <a className="link link-hover flex gap-2"><span><IoMail /></span>info@estatehive.org</a>
+          <a className="link link-hover flex gap-2"><span><IoMail /></span>info@craftopia.org</a>
           <a className="link link-hover flex gap-2"><span><FaLocationDot /></span>3015 Grand Ave, Coconut
             Grove, <br />Merrick Way, FL 12345 </a>
         </nav>
@@ -31,13 +31,13 @@ const Footer = () => {
         </nav>
         <form>
           <h6 className="footer-title">Newsletter</h6>
-          <fieldset className="form-control w-80">
+          <fieldset className="form-control">
             <label className="label">
-              <span className="label-text ">Enter your email address</span>
+              <span className="label-text text-white ">Enter your email address</span>
             </label>
             <div className="join">
               <input type="text" placeholder="username@site.com" className="input input-bordered join-item " />
-              <button className="btn btn-primary join-item -ml-3">Subscribe</button>
+              <button className="btn btn-primary join-item -ml-8">Subscribe</button>
             </div>
           </fieldset>
         </form>

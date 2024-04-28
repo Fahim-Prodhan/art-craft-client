@@ -58,7 +58,7 @@ const MyCrafts = () => {
     }
 
     return (
-        <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12'>
+        <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12 mb-12'>
             <h1 className='text-center text-4xl font-bold '>My Art & Craft List</h1>
             <div className='grid justify-center mb-12 my-6'>
                 <div className="dropdown">

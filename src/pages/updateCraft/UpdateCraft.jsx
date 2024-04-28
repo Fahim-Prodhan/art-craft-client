@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../provider/AuthProvider';
+
 import Swal from 'sweetalert2';
 import baseUrl from '../../services/helper';
 import { useLoaderData } from 'react-router-dom';
 
 const UpdateCraft = () => {
-    const { user } = useContext(AuthContext);
     const loadedCraftInfo = useLoaderData();
 
     const subcategories = ['Landscape Painting', "Portrait Drawing", "Watercolour Painting", "Oil Painting", "Charcoal Sketching", "Cartoon Drawing"]

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import logo from "../../assets/images/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
@@ -10,6 +10,21 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
+  const [theme, setTheme] = useState('light');
+
+  const location = useLocation();
+  
+
+
+  // Function to toggle the theme
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    const homeContainer = document.getElementById('home-container');
+    if (homeContainer) {
+      homeContainer.setAttribute('data-theme', newTheme);
+    }
+  };
 
   const { user, setLoading } = useContext(AuthContext);
   // console.log(user);
@@ -142,6 +157,7 @@ const Navbar = () => {
 
   return (
     <div>
+
       <nav className=" bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
@@ -153,6 +169,7 @@ const Navbar = () => {
               CraftoPia
             </span>
           </Link>
+
           <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
 
             {
@@ -202,6 +219,18 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
+            }
+
+            {
+              location.pathname == '/' && 
+              <div className={`flex items-center md:pl-4`}>
+              <input
+                type="checkbox"
+                className="toggle"
+                checked={theme === 'dark'}
+                onChange={toggleTheme}
+              />
+            </div>
             }
 
             <button
@@ -283,8 +312,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    <Tooltip id="my-tooltip" />
-
+      <Tooltip id="my-tooltip" />
     </div>
   );
 };

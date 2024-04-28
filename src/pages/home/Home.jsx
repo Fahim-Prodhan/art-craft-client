@@ -5,10 +5,12 @@ import HomeCraft from '../../components/homeCraft/HomeCraft';
 import HomeSubcategories from '../../components/homeSubcategories/HomeSubcategories';
 import LottieComp from '../../components/lottie/LottieComp';
 import { useState } from 'react';
+import CustomerReview from '../../components/customerReview/CustomerReview';
 
 
 const Home = () => {
     const loadedCrafts = useLoaderData();
+
 
     const [number, setNumber] = useState(6)
 
@@ -22,7 +24,7 @@ const Home = () => {
 
 
     return (
-        <div className='scroll-smooth'>
+        <div id='home-container' className='scroll-smooth'>
             <Banner></Banner>
             <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
 
@@ -36,7 +38,7 @@ const Home = () => {
                         }
                     </div>
                     <div className='text-center mt-12'>
-                        <button onClick={handleSeeMore} className="bg-[#65fa8f] duration-150 px-5 py-2 rounded-md text-xl hover:bg-[#98D8AA]">See More</button>
+                        <button onClick={handleSeeMore} className="bg-[#65fa8f] duration-150 px-5 py-2 rounded-md text-xl text-[#000] hover:bg-[#98D8AA]">See More</button>
                     </div>
                 </div>
                 <div className='mt-[100px]' >
@@ -47,8 +49,13 @@ const Home = () => {
 
             </div>
             <div className='mt-[100px]' >
-                <h1 className='text-center text-4xl font-bold pb-12'>Get the Best Painting</h1>
+                <h1 className='text-center text-4xl font-bold'>Get the Best Painting</h1>
+                <p className='pt-3 pb-8 text-center'>Celebrate EVERY moment with gifts from small shops!</p>
                 <LottieComp></LottieComp>
+            </div>
+
+            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
+                <CustomerReview></CustomerReview>
             </div>
         </div>
     );
