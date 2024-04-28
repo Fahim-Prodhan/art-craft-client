@@ -66,8 +66,8 @@ const UpdateCraft = () => {
             <Helmet>
                 <title>CraftoPia | Update Craft</title>
             </Helmet>
-            <div className="bg-[#eee] lg:px-28 md:py-16 text-center">
-                <h1 className="font-semibold text-[#FF6D60] text-5xl">
+            <div className="bg-[#eee] rounded-2xl lg:px-28 md:py-16 text-center mb-12">
+                <h1 className="font-semibold pt-6 text-[#FF6D60] text-3xl md:text-5xl">
                     Update Craft Items
                 </h1>
 

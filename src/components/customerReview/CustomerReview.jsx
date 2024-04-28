@@ -4,7 +4,7 @@ const CustomerReview = () => {
 
     return (
         <div className="pb-12">
-            <h1 className="font-bold text-4xl text-center pb-8">Customer Review</h1>
+            <h1 className="font-bold text-2xl md:text-4xl text-center pb-8">Customer Review</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 <div className="card card-side bg-base-100 shadow-xl">
                     <div className="card-body">

@@ -15,7 +15,7 @@ const HomeCraft = ({ craft }) => {
 
     return (
         <div >
-            <div className="card h-[620px] bg-base-100 shadow-xl">
+            <div className="card md:h-[620px] bg-base-100 shadow-xl">
                 <figure className='p-4 '><img className='rounded-lg  w-full' src={image} alt="Shoes" /></figure>
                 <div className="card-body pt-4">
                     <h2 className="card-title">
@@ -32,7 +32,7 @@ const HomeCraft = ({ craft }) => {
                     <div>
                         <hr />
                     </div>
-                    <p className='py-3'>{short_description}</p>
+                    <p className='md:py-3'>{short_description}</p>
                     
                     <div className='flex justify-between items-center'>
                         <p className='text-xl font-semibold'>Price: <span className='text-[#FF6D60]'>{price}</span></p>

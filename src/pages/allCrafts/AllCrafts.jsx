@@ -10,7 +10,7 @@ const AllCrafts = () => {
             <Helmet>
                 <title>CraftoPia | All Craft Item</title>
             </Helmet>
-            <h1 className='text-center my-12 text-4xl font-bold'>All Arts and Crafts Items</h1>
+            <h1 className='text-center my-12 text-2xl md:text-4xl font-bold'>All Arts and Crafts Items</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}

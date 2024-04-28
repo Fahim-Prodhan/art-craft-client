@@ -19,7 +19,7 @@ const FilteredSubcategoryCrafts = () => {
             <Helmet>
                 <title>CraftoPia | Subcategory Items</title>
             </Helmet>
-            <h1 className='text-center text-4xl font-bold md:pb-12'>{subcategoryName}</h1>
+            <h1 className='text-center text-2xl md:text-4xl font-bold md:pb-12 mt-4'>{subcategoryName}</h1>
             <div className='flex flex-wrap justify-center gap-6 '>
                 {
                     loadCrafts.map(craft => <FilteredSubcategoryCraft key={craft._id} craft={craft}></FilteredSubcategoryCraft>)

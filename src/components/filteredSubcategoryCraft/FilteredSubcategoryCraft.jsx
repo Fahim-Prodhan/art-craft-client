@@ -19,7 +19,7 @@ const FilteredSubcategoryCraft = ({craft}) => {
 
     return (
         <div className='mb-12'>
-            <div className="card md:w-80 lg:w-96 h-[620px] bg-base-100 shadow-xl">
+            <div className="card md:w-80 lg:w-96 md:h-[620px] bg-base-100 shadow-xl">
                 <figure className='p-4 '><img className='rounded-lg max-h-[220px] w-full' src={image} alt="Shoes" /></figure>
                 <div className="card-body pt-4">
                     <h2 className="card-title">

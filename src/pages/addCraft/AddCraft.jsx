@@ -73,8 +73,8 @@ const AddCraft = () => {
       <Helmet>
         <title>CraftoPia | Add Craft Item</title>
       </Helmet>
-      <div className="bg-[#eee] lg:px-28 md:py-16 text-center">
-        <h1 className="font-semibold text-[#FF6D60] text-5xl">
+      <div className="bg-[#eee] lg:px-28 md:py-16 text-center rounded-2xl">
+        <h1 className="font-semibold text-[#FF6D60] pt-4 text-3xl md:text-5xl">
           Add Craft Items
         </h1>
 

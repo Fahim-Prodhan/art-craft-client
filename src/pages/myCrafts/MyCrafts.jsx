@@ -63,7 +63,7 @@ const MyCrafts = () => {
             <Helmet>
                 <title>CraftoPia | My Craft</title>
             </Helmet>
-            <h1 className='text-center text-4xl font-bold '>My Art & Craft List</h1>
+            <h1 className='text-center mt-12 text-2xl md:text-4xl font-bold '>My Art & Craft List</h1>
             <div className='grid justify-center mb-12 my-6'>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn m-1">Filter Customization</div>

@@ -34,8 +34,8 @@ const Home = () => {
             <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
 
                 {/* Craft Card Section */}
-                <div className='mt-[100px]'>
-                    <h1 className='text-center text-4xl font-bold'>Craft Items</h1>
+                <div className='mt-12 md:mt-[100px]'>
+                    <h1 className='text-center text-2xl md:text-4xl font-bold'>Craft Items</h1>
                     <p className='pt-3 pb-12 text-center'>Explore the world famous arts. Find your Choice</p>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch'>
                         {
@@ -47,19 +47,19 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='mt-[100px]' >
-                    <h1 className='text-center text-4xl font-bold'>Art & Craft Categories</h1>
+                    <h1 className='text-center text-2xl md:text-4xl font-bold'>Art & Craft Categories</h1>
                     <p className='pt-3 pb-12 text-center'>Find Your Desire Design and arts filtering from subcategory</p>
                     <HomeSubcategories></HomeSubcategories>
                 </div>
 
             </div>
             <div className='mt-[100px]' >
-                <h1 className='text-center text-4xl font-bold'>Get the Best Painting</h1>
+                <h1 className='text-center text-2xl md:text-4xl font-bold'>Get the Best Painting</h1>
                 <p className='pt-3 pb-8 text-center'>Celebrate EVERY moment with gifts from small shops!</p>
                 <LottieComp></LottieComp>
             </div>
 
-            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
+            <div className="mt-12 md:mt-[100px] max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
                 <CustomerReview></CustomerReview>
             </div>
         </div>
