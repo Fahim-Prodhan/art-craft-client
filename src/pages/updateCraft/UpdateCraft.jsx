@@ -22,8 +22,6 @@ const UpdateCraft = () => {
         const rating = form.rating.value;
         const stock_status = form.stock_status.value;
         const processing_time = form.processing_time.value;
-        const user_email = form.user_email.value;
-        const user_name = form.user_name.value;
         const customization = form.customization.value;
 
         const formValues = {
@@ -35,8 +33,6 @@ const UpdateCraft = () => {
             rating,
             stock_status,
             processing_time,
-            user_email,
-            user_name,
             customization,
         };
 
@@ -203,41 +199,6 @@ const UpdateCraft = () => {
                                 required
                             />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className=" text-[14px] font-semibold label-text">
-                                    User Email
-                                </span>
-                            </label>
-                            <input
-                                value={user?.email}
-                                type="text"
-                                name="user_email"
-                                defaultValue={''}
-                                placeholder="Enter User Email"
-                                className="input "
-                                required
-                            />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className=" text-[14px] font-semibold label-text">
-                                    User Name
-                                </span>
-                            </label>
-                            <input
-                                value={user?.displayName}
-                                type="text"
-                                name="user_name"
-                                defaultValue={''}
-                                placeholder="Enter User Name"
-                                className="input "
-                                required
-                            />
-                        </div>
-
-
-
                         <div className="form-control mt-6 col-span-2">
                             <button type="submit" className="btn bg-[#FF6D60] text-white">
                                 Update

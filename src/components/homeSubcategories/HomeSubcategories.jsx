@@ -12,7 +12,7 @@ const HomeSubcategories = () => {
         .then(data=> setSubcategories(data))
     },[])
     return (
-        <div className='grid md:grid-cols-3 lg:grid-cols-4  gap-10'>
+        <div className='flex flex-wrap justify-center gap-10'>
             {
                 subcategories.map(subcategory=><HomeSubcategory key={subcategory._id} subcategory={subcategory}></HomeSubcategory>)
             }

@@ -6,6 +6,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import toast from "react-hot-toast";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
@@ -182,7 +183,7 @@ const Navbar = () => {
                 className={`flex items-center space-x-3 gap-4`}
               >
                 {
-                  user && <div className="tooltip tooltip-left avatar cursor-pointer" data-tip={user?.displayName}>
+                  user && <div className="tooltip tooltip-left avatar cursor-pointer" data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}>
                     <div className="w-12 rounded-full">
                       <img src={user?.photoURL} />
                     </div>
@@ -282,6 +283,8 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+    <Tooltip id="my-tooltip" />
+
     </div>
   );
 };
