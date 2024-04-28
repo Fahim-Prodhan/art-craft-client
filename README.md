@@ -5,15 +5,21 @@
 
 
 ## Key Features
-1. **Diverse Collection of Artworks**: Explore a wide range of painting and drawing masterpieces, from breathtaking landscapes to captivating portraits.
+- **Responsive Design:** Ensures optimal viewing across all devices, including mobile, tablet, and desktop, for a seamless browsing experience.
 
-2. **Personalized Art Experience**: Customize your living space with unique artworks tailored to your taste. Commission personalized paintings or drawings to express your individual style.
+- **Secure Authentication:** Utilizes password and email-based authentication for user login and registration, ensuring data privacy and security.
 
-3. **Interactive Art Community**: Engage with fellow art enthusiasts and creators in our vibrant online community. Share insights, exchange feedback, and connect with like-minded individuals.
+- **Interactive Navigation:** Features an intuitive navbar with active route highlighting, facilitating easy exploration throughout the website.
 
-4. **Seamless Art Discovery**: Discover new favorites and explore emerging artists with ease. Our intuitive navigation and curated categories make finding the perfect piece of art simple.
+- **Diverse Collection of Artworks**: Explore a wide range of painting and drawing masterpieces, from breathtaking landscapes to captivating portraits.
 
-5. **Effortless Buying and Selling**: Whether you're an artist showcasing your work or a collector seeking new pieces, our platform offers a seamless buying and selling experience.
+- **Personalized Art Experience**: Customize your living space with unique artworks tailored to your taste. Commission personalized paintings or drawings to express your individual style.
+
+- **Interactive Art Community**: Engage with fellow art enthusiasts and creators in our vibrant online community. Share insights, exchange feedback, and connect with like-minded individuals.
+
+- **Seamless Art Discovery**: Discover new favorites and explore emerging artists with ease. Our intuitive navigation and curated categories make finding the perfect piece of art simple.
+
+- **Effortless Buying and Selling**: Whether you're an artist showcasing your work or a collector seeking new pieces, our platform offers a seamless buying and selling experience.
 
 ## 2 npm Package
 - **Lottie React**

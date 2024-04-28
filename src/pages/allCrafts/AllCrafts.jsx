@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllCrafts = () => {
@@ -6,6 +7,9 @@ const AllCrafts = () => {
     console.log(loadedAllCrafts);
     return (
         <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-12 mb-6'>
+            <Helmet>
+                <title>CraftoPia | All Craft Item</title>
+            </Helmet>
             <h1 className='text-center my-12 text-4xl font-bold'>All Arts and Crafts Items</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">

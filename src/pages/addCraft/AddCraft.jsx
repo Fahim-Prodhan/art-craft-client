@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import baseUrl from "../../services/helper";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddCraft = () => {
 
@@ -69,6 +70,9 @@ const AddCraft = () => {
 
   return (
     <div className="mb-12 max-w-sm px-6 md:max-w-3xl lg:px-8 lg:max-w-6xl mx-auto mt-6 lg:mt-12">
+      <Helmet>
+        <title>CraftoPia | Add Craft Item</title>
+      </Helmet>
       <div className="bg-[#eee] lg:px-28 md:py-16 text-center">
         <h1 className="font-semibold text-[#FF6D60] text-5xl">
           Add Craft Items
@@ -228,7 +232,7 @@ const AddCraft = () => {
               />
             </div>
 
-            
+
 
             <div className="form-control mt-6 col-span-2">
               <button type="submit" className="btn bg-[#FF6D60] text-white">

@@ -4,6 +4,7 @@ import MyCraft from '../../components/myCraft/MyCraft';
 import baseUrl from '../../services/helper';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyCrafts = () => {
 
@@ -12,7 +13,7 @@ const MyCrafts = () => {
     const { setLoading } = useContext(AuthContext)
 
     const handleFilter = value => {
-        
+
         fetch(`${baseUrl}/crafts/filter/${value}`)
             .then(res => res.json())
             .then(data => {
@@ -22,7 +23,7 @@ const MyCrafts = () => {
             })
     }
 
-    const handelDelete = id =>{
+    const handelDelete = id => {
 
         Swal.fire({
             title: "Are you sure?",
@@ -32,33 +33,36 @@ const MyCrafts = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`${baseUrl}/crafts/${id}`,{
-                    method:"DELETE"
+                fetch(`${baseUrl}/crafts/${id}`, {
+                    method: "DELETE"
                 })
-                .then(res=>res.json())
-                .then(data=>{
-                    if(data.deletedCount > 0){
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your Craft has been deleted.",
-                            icon: "success"
-                          });
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Craft has been deleted.",
+                                icon: "success"
+                            });
 
-                        // Remove from UI
-                        const remainingData = myCrafts.filter(c=> c._id != id)
-                        setMyCrafts(remainingData)
-                    }
-                })
+                            // Remove from UI
+                            const remainingData = myCrafts.filter(c => c._id != id)
+                            setMyCrafts(remainingData)
+                        }
+                    })
             }
-          });
+        });
 
-        
+
     }
 
     return (
         <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12 mb-12'>
+            <Helmet>
+                <title>CraftoPia | My Craft</title>
+            </Helmet>
             <h1 className='text-center text-4xl font-bold '>My Art & Craft List</h1>
             <div className='grid justify-center mb-12 my-6'>
                 <div className="dropdown">

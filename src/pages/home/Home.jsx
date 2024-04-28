@@ -6,6 +6,7 @@ import HomeSubcategories from '../../components/homeSubcategories/HomeSubcategor
 import LottieComp from '../../components/lottie/LottieComp';
 import { useState } from 'react';
 import CustomerReview from '../../components/customerReview/CustomerReview';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -24,7 +25,11 @@ const Home = () => {
 
 
     return (
+        
         <div id='home-container' className='scroll-smooth'>
+            <Helmet>
+                <title>CraftoPia | Home</title>
+            </Helmet>
             <Banner></Banner>
             <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
 

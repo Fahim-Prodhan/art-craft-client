@@ -2,6 +2,7 @@
 import Swal from 'sweetalert2';
 import baseUrl from '../../services/helper';
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const UpdateCraft = () => {
     const loadedCraftInfo = useLoaderData();
@@ -10,7 +11,7 @@ const UpdateCraft = () => {
 
     const handleUpdateCraft = (e) => {
         e.preventDefault();
-        
+
         const form = e.target;
         const image = form.image.value;
         const item_name = form.item_name.value;
@@ -62,6 +63,9 @@ const UpdateCraft = () => {
 
     return (
         <div className="max-w-sm px-6 md:max-w-3xl lg:px-8 lg:max-w-6xl mx-auto mt-6 lg:mt-12">
+            <Helmet>
+                <title>CraftoPia | Update Craft</title>
+            </Helmet>
             <div className="bg-[#eee] lg:px-28 md:py-16 text-center">
                 <h1 className="font-semibold text-[#FF6D60] text-5xl">
                     Update Craft Items
