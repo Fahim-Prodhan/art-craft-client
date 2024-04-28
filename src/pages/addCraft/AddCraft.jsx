@@ -52,7 +52,7 @@ const AddCraft = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Good job!",
-            text: "You clicked the button!",
+            text: "Craft is added!",
             icon: "success",
           });
 

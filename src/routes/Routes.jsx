@@ -11,6 +11,7 @@ import baseUrl from "../services/helper";
 import MyCrafts from "../pages/myCrafts/MyCrafts";
 import AllCrafts from "../pages/allCrafts/AllCrafts";
 import ViewDetails from "../pages/viewDetails/ViewDetails";
+import UpdateCraft from "../pages/updateCraft/UpdateCraft";
 
 
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         {
             path:'/details/:id',
             element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+            loader:({params})=>fetch(`${baseUrl}/crafts/details/${params.id}`)
+        },
+        {
+            path:'/update/:id',
+            element:<PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
             loader:({params})=>fetch(`${baseUrl}/crafts/details/${params.id}`)
         },
       ]

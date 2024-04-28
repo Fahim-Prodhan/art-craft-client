@@ -14,7 +14,7 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className='scroll-smooth'>
             <Banner></Banner>
             <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
 
