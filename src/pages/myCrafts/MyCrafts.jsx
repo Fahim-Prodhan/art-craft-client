@@ -8,7 +8,7 @@ const MyCrafts = () => {
 
 
     return (
-        <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-12'>
+        <div className=' max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12'>
             <h1 className='text-center text-4xl font-bold my-12'>My Art & Craft List</h1>
             <div className='grid gap-6 md:grid-cols-2'>
                 {

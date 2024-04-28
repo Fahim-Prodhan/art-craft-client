@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-6xl mx-auto lg:mt-12">
+            <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
 
                 {/* Craft Card Section */}
                 <div className='mt-[100px]'>
@@ -27,15 +27,12 @@ const Home = () => {
                             loadedCrafts.slice(0, 6).map((craft, index) => <HomeCraft key={index} craft={craft}></HomeCraft>)
                         }
                     </div>
-                </div>
-
-                <div className='mt-[100px]' >
+                </div> 
+            <div className='mt-[100px]' >
                     <h1 className='text-center text-4xl font-bold'>Art & Craft Categories</h1>
                     <p className='pt-3 pb-12 text-center'>Find Your Desire Design and arts filtering from subcategory</p>
                     <HomeSubcategories></HomeSubcategories>
-                </div>
-
-
+            </div>
             </div>
         </div>
     );
