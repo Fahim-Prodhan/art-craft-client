@@ -10,11 +10,11 @@ const MyCrafts = () => {
 
     const loadedMyCrafts = useLoaderData()
     const [myCrafts, setMyCrafts] = useState(loadedMyCrafts)
-    const { setLoading } = useContext(AuthContext)
+    const { setLoading,user } = useContext(AuthContext)
 
     const handleFilter = value => {
 
-        fetch(`${baseUrl}/crafts/filter/${value}`)
+        fetch(`${baseUrl}/crafts/filter/${value}/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(true)

@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+
 
 const FilteredSubcategoryCraft = ({craft}) => {
     const {
@@ -13,6 +14,8 @@ const FilteredSubcategoryCraft = ({craft}) => {
         stock_status,
         processing_time
      } = craft
+
+  
 
     return (
         <div className='mb-12'>

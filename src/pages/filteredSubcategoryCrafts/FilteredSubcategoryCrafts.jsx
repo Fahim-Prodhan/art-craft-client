@@ -13,7 +13,7 @@ const FilteredSubcategoryCrafts = () => {
 
     console.log(subcategoryName);
 
-    console.log(loadCrafts);
+    // console.log(loadCrafts);
     return (
         <div className="max-w-sm px-6 md:max-w-3xl md:px-8 lg:max-w-7xl mx-auto lg:mt-12">
             <Helmet>
