@@ -40,8 +40,8 @@ const UpdateCraft = () => {
             customization,
         };
 
-        fetch(`${baseUrl}/addCrafts`, {
-            method: "POST",
+        fetch(`${baseUrl}/crafts/update/${loadedCraftInfo._id}`, {
+            method: "PUT",
             headers: {
                 'content-type': 'application/json'
             },
@@ -50,14 +50,12 @@ const UpdateCraft = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Good job!",
                         text: "Craft is Updated!",
                         icon: "success",
                     });
-
-                    form.reset();
                 } else {
                     Swal.fire({
                         icon: "error",
@@ -113,7 +111,7 @@ const UpdateCraft = () => {
                                     Subcategory Name
                                 </span>
                             </label>
-                            <select name="subcategory_name" className="select select-bordered w-full">
+                            <select defaultValue={loadedCraftInfo.subcategory_name} name="subcategory_name" className="select select-bordered w-full">
                                 {subcategories.map((subcategory, index) => (
                                     <option key={index}>{subcategory}</option>
                                 ))}
@@ -125,7 +123,7 @@ const UpdateCraft = () => {
                                     Subcategory Name
                                 </span>
                             </label>
-                            <select name="customization" className="select select-bordered w-full">
+                            <select defaultValue={loadedCraftInfo.customization} name="customization" className="select select-bordered w-full">
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>

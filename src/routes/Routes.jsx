@@ -12,6 +12,7 @@ import MyCrafts from "../pages/myCrafts/MyCrafts";
 import AllCrafts from "../pages/allCrafts/AllCrafts";
 import ViewDetails from "../pages/viewDetails/ViewDetails";
 import UpdateCraft from "../pages/updateCraft/UpdateCraft";
+import FilteredSubcategoryCrafts from "../pages/filteredSubcategoryCrafts/FilteredSubcategoryCrafts";
 
 
 
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
             path:'/update/:id',
             element:<PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
             loader:({params})=>fetch(`${baseUrl}/crafts/details/${params.id}`)
+        },
+        {
+            path:'/subcategory_items/:subcategory_name',
+            element:<FilteredSubcategoryCrafts></FilteredSubcategoryCrafts>,
+            loader:({params})=>fetch(`${baseUrl}/crafts/subcategory/filter/${params.subcategory_name}`)
         },
       ]
     },
