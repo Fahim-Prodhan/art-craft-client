@@ -1,5 +1,8 @@
 # CraftoPia
 
+# Category Name
+##  Painting and Drawing
+
 ## Live Site
 [Visit CraftoPia](https://art-craft-2ddac.web.app)
 
