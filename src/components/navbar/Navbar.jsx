@@ -165,7 +165,7 @@ const Navbar = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img src={logo} className="h-8" alt="" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
               CraftoPia
             </span>
           </Link>
@@ -262,7 +262,7 @@ const Navbar = () => {
             className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
             id="navbar-cta"
           >
-            <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 border lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0  dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
               {links}
             </ul>
           </div>
