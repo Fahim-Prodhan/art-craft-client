@@ -42,9 +42,16 @@ const Home = () => {
                             loadedCrafts.slice(0, number).map((craft, index) => <HomeCraft key={index} craft={craft}></HomeCraft>)
                         }
                     </div>
-                    <div className='text-center mt-12'>
-                        <button onClick={handleSeeMore} className="bg-[#65fa8f] duration-150 px-5 py-2 rounded-md text-xl text-[#000] hover:bg-[#98D8AA]">See More</button>
-                    </div>
+                    {number < loadedCrafts.length && (
+                        <div className='text-center mt-12'>
+                            <button
+                                onClick={handleSeeMore}
+                                className="bg-[#65fa8f] duration-150 px-5 py-2 rounded-md text-xl text-[#000] hover:bg-[#98D8AA]"
+                            >
+                                See More
+                            </button>
+                        </div>
+                    )}
                 </div>
                 <div className='mt-[100px]' >
                     <h1 className='text-center text-2xl md:text-4xl font-bold'>Art & Craft Categories</h1>
