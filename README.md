@@ -5,7 +5,7 @@
 
 # Project Overview
 
-Welcome to our art platform, where art meets community and commerce seamlessly. Our platform prioritizes security with robust password and email-based authentication, ensuring your personal data remains private and secure. Immerse yourself in our vibrant interactive art community, where you can connect with fellow enthusiasts and creators. Share your insights, exchange feedback, and explore a diverse range of artworks that cater to every taste and style. Whether you're an artist looking to showcase your work or a collector in search of new pieces, our platform offers an effortless buying and selling experience. Discover new favorites, engage with emerging artists, and personalize your art collection to reflect your unique style and passion. Join us in celebrating art in its many forms and enjoy a seamless, enriching experience that connects art lovers and creators worldwide.
+Welcome to our art platform, where art meets community and commerce seamlessly. Our platform prioritizes security with robust password and email-based authentication, ensuring your personal data remains private and secure. Immerse yourself in our vibrant interactive art community, where you can connect with fellow enthusiasts and creators. Share your insights, exchange feedback, and explore a diverse range of artworks that cater to every taste and style. Whether you're an artist looking to showcase your work or a collector in search of new pieces, our platform offers an effortless buying and selling experience. Discover new favorites, engage with emerging artists, and personalize your art collection to reflect your unique style and passion.
 
 
 
@@ -28,7 +28,7 @@ Welcome to our art platform, where art meets community and commerce seamlessly. 
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Fahim-Prodhan/blood_donation_client.git
+   git clone https://github.com/Fahim-Prodhan/art-craft-client.git
    cd YourRepository
   
 2. **Install Dependencies**:
