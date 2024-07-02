@@ -1,28 +1,41 @@
 # CraftoPia
 
-## Category Name: Painting and Drawing
-
 ## Live Site
 [Visit CraftoPia](https://art-craft-2ddac.web.app)
 
+# Project Overview
+
+Welcome to our art platform, where art meets community and commerce seamlessly. Our platform prioritizes security with robust password and email-based authentication, ensuring your personal data remains private and secure. Immerse yourself in our vibrant interactive art community, where you can connect with fellow enthusiasts and creators. Share your insights, exchange feedback, and explore a diverse range of artworks that cater to every taste and style. Whether you're an artist looking to showcase your work or a collector in search of new pieces, our platform offers an effortless buying and selling experience. Discover new favorites, engage with emerging artists, and personalize your art collection to reflect your unique style and passion. Join us in celebrating art in its many forms and enjoy a seamless, enriching experience that connects art lovers and creators worldwide.
+
+
 
 ## Key Features
-- **Responsive Design:** Ensures optimal viewing across all devices, including mobile, tablet, and desktop, for a seamless browsing experience.
 
-- **Secure Authentication:** Utilizes password and email-based authentication for user login and registration, ensuring data privacy and security.
-
-- **Interactive Navigation:** Features an intuitive navbar with active route highlighting, facilitating easy exploration throughout the website.
-
-- **Diverse Collection of Artworks**: Explore a wide range of painting and drawing masterpieces, from breathtaking landscapes to captivating portraits.
-
-- **Personalized Art Experience**: Customize your living space with unique artworks tailored to your taste. Commission personalized paintings or drawings to express your individual style.
+- **Secure Authentication**: Utilizes password and email-based authentication for user login and registration, ensuring data privacy and security.
 
 - **Interactive Art Community**: Engage with fellow art enthusiasts and creators in our vibrant online community. Share insights, exchange feedback, and connect with like-minded individuals.
 
-- **Seamless Art Discovery**: Discover new favorites and explore emerging artists with ease. Our intuitive navigation and curated categories make finding the perfect piece of art simple.
-
 - **Effortless Buying and Selling**: Whether you're an artist showcasing your work or a collector seeking new pieces, our platform offers a seamless buying and selling experience.
 
-## 2 npm Package
-- **Lottie React**
-- **React-tooltip**
+## Technologies
+- **Frontend**: HTML, TailwindCSS, JavaScript (React.js)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+- **Deployment**: Firebase
+
+## Steps to Clone and Run Locally
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Fahim-Prodhan/blood_donation_client.git
+   cd YourRepository
+  
+2. **Install Dependencies**:
+   ```bash
+    npm install
+
+3. **Run**:
+   ```bash
+    npm run dev
+
